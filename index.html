@@ -1,8 +1,131 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 <script src='revs_filter.js'></script>
 <section id='revs'>
-	{file='revssort.tpl'}
+	<div id="revsort">
+	<div class="wrap flex">
+		<a href="#" data-cat-id='0' class='this' >Все отзывы</a>
+		<a href="#" data-cat-id='1'>Технология</a>
+		<a href="#" data-cat-id='2'>Объект</a>
+		<a href="#" data-cat-id='3'>Фактура</a>
+		<a href="#" data-cat-id='4'>Бренд</a>
+		<a href="#" data-cat-id='5'>Цвет</a>
+		<div>
+			<div style='display:none;' id='cat1'>
+				<a data-cat-name-id='1'>Двухуровневые</a>
+				<a data-cat-name-id='2'>С подсветкой</a>
+				<a data-cat-name-id='3'>Бесщелевые</a>
+				<a data-cat-name-id='4'>Фотопечать</a>
+				<a data-cat-name-id='5'>Зведное небо</a>
+				<a data-cat-name-id='6'>Криволинейные</a>
+				<a data-cat-name-id='7'>Парящие</a>
+				<a data-cat-name-id='8'>3D</a>
+				<a data-cat-name-id='9'>Комбинированные</a>
+				<a data-cat-name-id='10'>Волной</a>
+				<a data-cat-name-id='11'>Полупрозрачные</a>
+				<a data-cat-name-id='12'>Акустические</a>
+				<a data-cat-name-id='13'>Многоуровневые</a>
+				<a data-cat-name-id='14'>Перфорированные</a>
+				<a data-cat-name-id='15'>Теневые</a>
+			</div>
+			<div style='display:none;' id='cat2'>
+				<a data-cat-name-id='16'>Кухня</a>
+				<a data-cat-name-id='17'>Ванная</a>
+				<a data-cat-name-id='18'>Гостинная</a>
+				<a data-cat-name-id='19'>Детская</a>
+				<a data-cat-name-id='20'>Спальня</a>
+				<a data-cat-name-id='21'>Прихожая</a>
+				<a data-cat-name-id='22'>Бассейн</a>
+				<a data-cat-name-id='23'>Квартира</a>
+				<a data-cat-name-id='24'>шкаф-купе</a>
+				<a data-cat-name-id='25'>С люстрами</a>
+				<a data-cat-name-id='26'>Зал</a>
+				<a data-cat-name-id='27'>Деревнный дом</a>
+				<a data-cat-name-id='28'>Коридор</a>
+				<a data-cat-name-id='29'>Хрущевка</a>
+				<a data-cat-name-id='30'>Офис</a>
+				<a data-cat-name-id='31'>Дача</a>
+			</div>
+			<div style='display:none;' id='cat3'>
+				<a data-cat-name-id='32'>Матовая факрута</a>
+				<a data-cat-name-id='33'>Сатиновая фактура</a>
+				<a data-cat-name-id='34'>Глянцевая фактура</a>
+				<a data-cat-name-id='35'>Тканевая фактура</a>
+				<a data-cat-name-id='36'>Фактурная фактура</a>
+				<a data-cat-name-id='37'>Цветная фактура</a>
+			</div>
+			<div style='display:none;' id='cat4'>
+				<a data-cat-name-id='38'>Descor</a>
+				<a data-cat-name-id='39'>Cerutti</a>
+				<a data-cat-name-id='40'>Clipso</a>
+				<a data-cat-name-id='41'>Pongs</a>
+				<a data-cat-name-id='42'>MSD</a>
+			</div>
+			<div style='display:none;' id='cat5'>
+				<a data-cat-name-id='43'>Фиолетовые</a>
+				<a data-cat-name-id='44'>Черно-белые</a>
+				<a data-cat-name-id='45'>Темные</a>
+				<a data-cat-name-id='46'>Розовые</a>
+				<a data-cat-name-id='47'>Светлые</a>
+				<a data-cat-name-id='48'>Серые</a>
+				<a data-cat-name-id='49'>Сиреневые</a>
+				<a data-cat-name-id='50'>Бирюзовые</a>
+				<a data-cat-name-id='51'>Бордовые</a>
+				<a data-cat-name-id='52'>Голубые</a>
+				<a data-cat-name-id='53'>Двухцветные</a>
+				<a data-cat-name-id='54'>Коричневые</a>
+				<a data-cat-name-id='55'>Оранжевые</a>
+				<a data-cat-name-id='56'>Бежевые</a>
+				<a data-cat-name-id='57'>Белый</a>
+				<a data-cat-name-id='58'>Черный</a>
+				<a data-cat-name-id='59'>Синий</a>
+				<a data-cat-name-id='60'>Красный</a>
+				<a data-cat-name-id='61'>Зеленый</a>
+				<a data-cat-name-id='62'>Цветной</a>
+				<a data-cat-name-id='63'>Желтый</a>
+			</div>
+		</div>
+	</div>
+</div>
 	<div class='wrap flex'>
-		{file='revs.tpl'}
+		<review-box data-rev-id='1' data-rev-cats="Отзывы о нас / Сатиновая фактура / Коридор / Прихожая"><img src="{THEME}/images/null/null42.png" alt='Reviews #1'></review-box>
+		<review-box data-rev-id='2' data-rev-cats="Отзывы о нас  / Матовая факрута  / Кухня"><img src="{THEME}/images/null/null42.png" alt='Reviews #2'></review-box>
+		<review-box data-rev-id='3' data-rev-cats="Отзывы о нас   / Криволинейные"><img src="{THEME}/images/null/null42.png" alt='Reviews #3'></review-box>
+		<review-box data-rev-id='4' data-rev-cats="Отзывы о нас    / Криволинейные"><img src="{THEME}/images/null/null42.png" alt='Reviews #4'></review-box>
+		<review-box data-rev-id='5' data-rev-cats="Отзывы о нас     / Матовая факрута     / Спальня     / Pongs"><img src="{THEME}/images/null/null42.png" alt='Reviews #5'></review-box>
+		<review-box data-rev-id='6' data-rev-cats="Отзывы о нас      / Двухуровневые      / Pongs"><img src="{THEME}/images/null/null42.png" alt='Reviews #6'></review-box>
+		<review-box data-rev-id='7' data-rev-cats="Отзывы о нас       / С подсветкой       / Спальня       / Китайские       / MSD"><img src="{THEME}/images/null/null42.png" alt='Reviews #7'></review-box>
+		<review-box data-rev-id='8' data-rev-cats="Отзывы о нас        / С подсветкой        / Парящие        / Коридор        / Прихожая        / Китайские        / MSD"><img src="{THEME}/images/null/null42.png" alt='Reviews #8'></review-box>
+		<review-box data-rev-id='9' data-rev-cats="Отзывы о нас         / Двухуровневые"><img src="{THEME}/images/null/null42.png" alt='Reviews #9'></review-box>
+		<review-box data-rev-id='10' data-rev-cats="Отзывы о нас          / Бесщелевые"><img src="{THEME}/images/null/null42.png" alt='Reviews #10'></review-box>
+		<review-box data-rev-id='11' data-rev-cats="Отзывы о нас           / Clipso"><img src="{THEME}/images/null/null42.png" alt='Reviews #11'></review-box>
+		<review-box data-rev-id='12' data-rev-cats="Отзывы о нас            / Clipso"><img src="{THEME}/images/null/null42.png" alt='Reviews #12'></review-box>
+		<review-box data-rev-id='13' data-rev-cats="Отзывы о нас             / Французские             / Cerutti"><img src="{THEME}/images/null/null42.png" alt='Reviews #13'></review-box>
+		<review-box data-rev-id='14' data-rev-cats="Отзывы о нас              / Французские              / Cerutti"><img src="{THEME}/images/null/null42.png" alt='Reviews #14'></review-box>
+		<review-box data-rev-id='15' data-rev-cats="Отзывы о нас               / Тканевая фактура               / Descor"><img src="{THEME}/images/null/null42.png" alt='Reviews #15'></review-box>
+		<review-box data-rev-id='16' data-rev-cats="Отзывы о нас                / Фактурная фактура"><img src="{THEME}/images/null/null42.png" alt='Reviews #16'></review-box>
+		<review-box data-rev-id='17' data-rev-cats="Отзывы о нас                 / Сатиновая фактура"><img src="{THEME}/images/null/null42.png" alt='Reviews #17'></review-box>
+		<review-box data-rev-id='18' data-rev-cats="Отзывы о нас                  / Парящие"><img src="{THEME}/images/null/null42.png" alt='Reviews #18'></review-box>
+		<review-box data-rev-id='19' data-rev-cats="Отзывы о нас                   / Коридор                   / Прихожая"><img src="{THEME}/images/null/null42.png" alt='Reviews #19'></review-box>
+		<review-box data-rev-id='20' data-rev-cats="Отзывы о нас                    / Спальня                    / Китайские                    / MSD"><img src="{THEME}/images/null/null42.png" alt='Reviews #20'></review-box>
+		<review-box data-rev-id='21' data-rev-cats="Отзывы о нас                     / Детская"><img src="{THEME}/images/null/null42.png" alt='Reviews #21'></review-box>
+		<review-box data-rev-id='22' data-rev-cats="Отзывы о нас                      / Матовая факрута                      / Глянцевая фактура                      / Гостинная"><img src="{THEME}/images/null/null42.png" alt='Reviews #22'></review-box>
+		<review-box data-rev-id='23' data-rev-cats="Отзывы о нас                       / Матовая факрута                       / Гостинная"><img src="{THEME}/images/null/null42.png" alt='Reviews #23'></review-box>
+		<review-box data-rev-id='24' data-rev-cats="Отзывы о нас                        / Фотопечать"><img src="{THEME}/images/null/null42.png" alt='Reviews #24'></review-box>
+		<review-box data-rev-id='25' data-rev-cats="Отзывы о нас                         / Глянцевая фактура                         / Кухня"><img src="{THEME}/images/null/null42.png" alt='Reviews #25'></review-box>
+		<review-box data-rev-id='26' data-rev-cats="Отзывы о нас                          / Зведное небо"><img src="{THEME}/images/null/null42.png" alt='Reviews #26'></review-box>
+		<review-box data-rev-id='27' data-rev-cats="Отзывы о нас                           / Фотопечать"><img src="{THEME}/images/null/null42.png" alt='Reviews #27'></review-box>
+		<review-box data-rev-id='28' data-rev-cats="Отзывы о нас                            / Ванная"><img src="{THEME}/images/null/null42.png" alt='Reviews #28'></review-box>
+		<review-box data-rev-id='29' data-rev-cats="Отзывы о нас                             / Зведное небо"><img src="{THEME}/images/null/null42.png" alt='Reviews #29'></review-box>
+		<review-box data-rev-id='30' data-rev-cats="Отзывы о нас                              / Детская"><img src="{THEME}/images/null/null42.png" alt='Reviews #30'></review-box>
+		<review-box data-rev-id='31' data-rev-cats="Отзывы о нас                               / Ванная"><img src="{THEME}/images/null/null42.png" alt='Reviews #31'></review-box>
+		<review-box data-rev-id='32' data-rev-cats="Отзывы о нас                                / Фактурная фактура"><img src="{THEME}/images/null/null42.png" alt='Reviews #32'></review-box>
+		<review-box data-rev-id='33' data-rev-cats="Отзывы о нас                                 / Тканевая фактура                                 / Descor"><img src="{THEME}/images/null/null42.png" alt='Reviews #33'></review-box>
+		<review-box data-rev-id='34' data-rev-cats="Отзывы о нас                                  / Ванная"><img src="{THEME}/images/null/null42.png" alt='Reviews #34'></review-box>
+		<review-box data-rev-id='35' data-rev-cats="Отзывы о нас                                   / Цветная фактура                                   / Голубые                                   / Двухцветные"><img src="{THEME}/images/null/null42.png" alt='Reviews #35'></review-box>
+		<review-box data-rev-id='36' data-rev-cats="Отзывы о нас                                    / Цветная фактура"><img src="{THEME}/images/null/null42.png" alt='Reviews #36'></review-box>
+		<review-box data-rev-id='37' data-rev-cats="Отзывы о нас                                     / С подсветкой"><img src="{THEME}/images/null/null42.png" alt='Reviews #37'></review-box>
+		<review-box data-rev-id='38' data-rev-cats="Отзывы о нас                                      / Цветная фактура                                      / Двухцветные"><img src="{THEME}/images/null/null42.png" alt='Reviews #38'></review-box>
+		<review-box data-rev-id='39' data-rev-cats="Отзывы о нас                                       / Двухуровневые"><img src="{THEME}/images/null/null42.png" alt='Reviews #39'></review-box>
+		<review-box data-rev-id='40' data-rev-cats="Отзывы о нас                                        / 3D"><img src="{THEME}/images/null/null42.png" alt='Reviews #40'></review-box>
 	</div>
 </section>
