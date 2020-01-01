@@ -107,7 +107,7 @@ $(function(){
 		// Создаем навигацию по страницам
 		createNav(){
 			let $nav = "<section id='revs_nav'><div class='wrap flex'>";
-			for(let $i = 1; $i < this._revs_page_count; $i++)
+			for(let $i = 1; $i <= this._revs_page_count; $i++)
 				$nav += "<a href='#'"+(($i == this._revs_page_num) ? " class='this'" : '')+">"+$i+"</a>";
 
 			$nav += "</div></section>";
