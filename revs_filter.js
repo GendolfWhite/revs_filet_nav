@@ -146,7 +146,7 @@ $(function(){
 				$(this._sort_a).removeClass('this');
 				$(this._sort_a+"[data-cat-id='"+this._sort_but_id+"']").addClass('this');
 				$(this._sort_a_for_div).removeClass('this');
-				$(this._sort_a_for_div+="[data-cat-name-id='"+this._sort_name_id+"']").addClass('this');
+				$(this._sort_a_for_div+"[data-cat-name-id='"+this._sort_name_id+"']").addClass('this');
 			}
 		},
 
@@ -166,7 +166,7 @@ $(function(){
 				this._sort_but_id = parseInt($opts['_sort_but_id']);
 				this._sort_name_id = eval($opts['_sort_name_id']);
 				if(this._sort_name_id !== null){
-					this._revs_cat = $(this._sort_a_for_div+="[data-cat-name-id='"+this._sort_name_id+"']").text();
+					this._revs_cat = $(this._sort_a_for_div+"[data-cat-name-id='"+this._sort_name_id+"']").text();
 				}
 
 				this.resetThis();
@@ -182,7 +182,6 @@ $(function(){
 			$opts += '&_sort_name_id='+this._sort_name_id;
 			$opts += '&_sort_but_id='+this._sort_but_id;
 			window.history.pushState(null, null, $opts);
-			this.pre($opts);
 		},
 
 		// Вешаем ивенты на кнопки
