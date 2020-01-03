@@ -1,4 +1,5 @@
 $(function(){
+
 	$_revs = {
 		_all_revs: true, // Выводить все отзывы без фильтра.
 		_revs_cat: null, // Имя категории
@@ -32,6 +33,7 @@ $(function(){
 			this.createNotFound();
 			this.showRevs();
 			this.events();
+			this.getOpts();
 		},
 
 		// Функция вывода информации в консаль 
@@ -108,7 +110,7 @@ $(function(){
 		createNav(){
 			let $nav = "<section id='revs_nav'><div class='wrap flex'>";
 			for(let $i = 1; $i <= this._revs_page_count; $i++)
-				$nav += "<a href='#'"+(($i == this._revs_page_num) ? " class='this'" : '')+">"+$i+"</a>";
+				$nav += "<a href='#'"+(($i == this._revs_page_num) ? " class='this'" : '')+" data-revs-page-num='"+$i+"'>"+$i+"</a>";
 
 			$nav += "</div></section>";
 			$(this._parent).after($nav);
@@ -135,21 +137,72 @@ $(function(){
 			}, 400);
 		},
 
+		// функция для переустановки класса this у управляющих элементов.
+		resetThis(){
+			if(this._all_revs){
+				$(this._nav_a).removeClass('this');
+				$(this._nav_a+"[data-revs-page-num='"+this._revs_page_num+"']").addClass('this');
+			}else{
+				$(this._sort_a).removeClass('this');
+				$(this._sort_a+"[data-cat-id='"+this._sort_but_id+"']").addClass('this');
+				$(this._sort_a_for_div).removeClass('this');
+				$(this._sort_a_for_div+="[data-cat-name-id='"+this._sort_name_id+"']").addClass('this');
+			}
+		},
+
+		// Функция проверки сохранённых данных для отображения нужных блоков.
+		getOpts(){
+			if(window.location.hash != ''){
+				let $opts = window.location.hash.replace('#','').split('&');
+				let $n_opts = [];
+				$opts.forEach(function(item, i, arr){
+					item = item.split('=');
+					$n_opts[item[0]] = item[1];
+				}); // Да-да.. Я в курсе что в таком случае длинна массива в консоле будет = 0.. 
+
+				$opts = $n_opts;
+				this._all_revs = eval($opts['_all_revs']);
+				this._revs_page_num = parseInt($opts['_revs_page_num']);
+				this._sort_but_id = parseInt($opts['_sort_but_id']);
+				this._sort_name_id = eval($opts['_sort_name_id']);
+				if(this._sort_name_id !== null){
+					this._revs_cat = $(this._sort_a_for_div+="[data-cat-name-id='"+this._sort_name_id+"']").text();
+				}
+
+				this.resetThis();
+				this.showRevs();
+			}
+		},
+
+		// Записываем данные в адресную строку для возвращения по истории окна к нужным данным.
+		saveOptsToUrl(){
+			let $opts = '#';
+			$opts += '_all_revs='+this._all_revs;
+			$opts += '&_revs_page_num='+this._revs_page_num;
+			$opts += '&_sort_name_id='+this._sort_name_id;
+			$opts += '&_sort_but_id='+this._sort_but_id;
+			window.history.pushState(null, null, $opts);
+			this.pre($opts);
+		},
+
 		// Вешаем ивенты на кнопки
 		events(){
 			let $self = this;
 			$(document).on('click', this._nav_a, function(){
 				$self.E_nav_a($(this));
+				$self.saveOptsToUrl();
 				return false;
 			});
 			
 			$(document).on('click', this._sort_a, function(){
 				$self.E_sort_a($(this));
+				$self.saveOptsToUrl();
 				return false;
 			});
 
 			$(document).on('click', this._sort_a_for_div, function(){
 				$self.E_sort_a_for_div($(this));
+				$self.saveOptsToUrl();
 				return false;
 			});
 
@@ -220,4 +273,5 @@ $(function(){
 	};
 
 	$_revs.init();
+
 });

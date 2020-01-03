@@ -1,7 +1,6 @@
-*{box-sizing:border-box; padding:0px; margin:0px;}
+*{padding:0; margin:0; box-sizing:border-box;}
 a{color:inherit;}
-
-.flex{display:flex; align-items:center; justify-content:center; flex-direction:row; flex-wrap:wrap;}
+.flex{display:flex; align-items:center; justify-content:center; flex-wrap:wrap; flex-direction:row;}
 
 #revsort{width:100%;}
 	#revsort > .wrap{justify-content:flex-start; align-items:flex-start; padding-top:45px;}
@@ -23,8 +22,7 @@ a{color:inherit;}
 #revs{width:100%; min-height:auto; background:#FFF;}
 	#revs > .wrap{padding:45px 0px; align-items:flex-start; justify-content:flex-start;}
 		#revs > .wrap > review-box{width:calc((100% / 3) - 20px); margin:15px 10px; position:relative; display:none;}
-		/*#revs > .wrap > review-box.show:nth-child(3n){margin-right:0px;}*/
-		/*#revs > .wrap > review-box.show:nth-child(3n-2){margin-left:0px;}*/
+			#revs > .wrap > review-box > a{display:block; width:100%; height:100%; position:absolute; top:0px; left:0px; z-index:5;}
 		#revs > .wrap > review-box.show{display:block !important;}
 			#revs > .wrap > review-box > img{display:block; width:100%; position:relative; z-index:1; background:#999; opacity:0.3;}
 			#revs > .wrap > review-box::after{display:flex; align-items:center; justify-content:center; flex-direction:column; width:100%; height:100%; z-index:2; position:absolute; top:0px; left:0px; content:attr(data-rev-id); font-size:50px; color:#333; font-weight:100;}
@@ -32,7 +30,7 @@ a{color:inherit;}
 	#revs > .wrap > review-box{width:calc((100% / 2) - 20px);}
 }
 @media(max-width:750px){
-	#revs > .wrap > review-box{width:calc((100% / 1) - 20px);
+	#revs > .wrap > review-box{width:calc((100% / 1) - 20px);}
 }
 
 #revs_nav{min-height:auto; background:#FFF;}
